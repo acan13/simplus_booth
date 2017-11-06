@@ -9,7 +9,7 @@
 }
 
 body{
-  background-image: url('/assets/Simplus_Background.png');
+  background-image: url('/assets/Simplus_Background_updated.png');
 }
 
 #counter{
@@ -19,6 +19,13 @@ body{
   width: 25%;
   vertical-align:top;
   text-align: center;
+  padding-top: 10px;
+  max-height: 100%;
+}
+
+video{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .video-container {
@@ -29,6 +36,8 @@ body{
 	overflow: hidden;
   width: 70%;
   display: inline-block;
+  resize: vertical;
+  overflow: auto;
 }
 
 .video-container iframe,
@@ -41,31 +50,32 @@ body{
 	height: 100%;
 }
 
+.right{
+  height: 10%;
+}
+
 img{
-  // mix-blend-mode: multiply;
-  width: 90%;
+  max-width: 90%;
+  margin-top: -10px;
 }
 
 #wrapper{
-  // background-image: url('/assets/Simplus_Background.png');
+  padding: 10px;
 }
 
-video{
-  display: inline-block;
-  vertical-align: middle;
-}
+
 
 h4{
   font-size: 80px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 56px;
+  margin-bottom: -26px;
   font-weight: normal;
 }
 
 h3{
   font-size: 40px;
   font-weight: normal;
-  margin-top: 10px;
+  margin-top: 60px;
 }
 
 h5{

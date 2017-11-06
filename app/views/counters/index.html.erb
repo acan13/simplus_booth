@@ -8,17 +8,25 @@
   <body>
     <div id="wrapper">
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/kNhfpjSPvIU" frameborder="0" gesture="media" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/uIEyzv0CgII?playlist=uIEyzv0CgII&loop=1&autoplay=1" frameborder="0" gesture="media" autoplay=1 loop=1></iframe>
       </div>
       <div id="counter">
-        <img src="/assets/Logo-White-01-TM.png" alt="">
-        <h3>Total Donated So Far</h3>
-        <h4>$<span class="donation1"><%= @donations1.counter %></span></h4>
-        <img src="/assets/water_org_logo_white.png" alt="">
-        <h4>$<span class="donation1"><%= @donations1.counter %></span></h4>
-        <img src="/assets/educated_refugee_foundation.png" alt="">
-        <h3>Scan Your Badge to Give</h3>
-        <h5>#SimplusGives</h5>
+        <div class="right">
+          <img src="/assets/Logo-White-01-TM.png" alt="">
+          <h3>Total Donated So Far</h3>
+        </div>
+        <div class="right">
+          <h4>$<span class="donation1"><%= @donations1.counter %></span></h4>
+          <img id="water" src="/assets/water_org_logo_white.png" alt="">
+        </div>
+        <div class="right">
+          <h4>$<span class="donation2"><%= @donations2.counter %></span></h4>
+          <img id="refugee" src="/assets/educated_refugee_foundation.png" alt="">
+        </div>
+        <div class="right">
+          <h3>Scan Your Badge to Give</h3>
+          <h5>#SimplusGives</h5>
+        </div>
       </div>
     </div>
   </body>
@@ -26,13 +34,24 @@
 
 <script type="text/javascript">
 
-  $('#counter').on('click',function(){
+  $('#water').on('click',function(){
     $.ajax({
-      url: '/donate',
+      url: '/donate/water',
       method: 'get',
       success: function(serverResponse){
-        console.log("Received this from the server:",serverResponse)
-        $('.donation1').html(serverResponse.donation1)
+        // console.log("Click received this from the server:",serverResponse)
+        $('.donation1').html(serverResponse.donation)
+      }
+    })
+  })
+
+  $('#refugee').on('click',function(){
+    $.ajax({
+      url: '/donate/refugee',
+      method: 'get',
+      success: function(serverResponse){
+        // console.log("Click received this from the server:",serverResponse)
+        $('.donation2').html(serverResponse.donation)
       }
     })
   })
@@ -44,8 +63,9 @@
       url: '/update_progress',
       method: 'get',
       success: function(serverResponse){
-        console.log("Received this from the server:",serverResponse)
+        // console.log("Auto check received this from the server:",serverResponse)
         $('.donation1').html(serverResponse.donation1)
+        $('.donation2').html(serverResponse.donation2)
       }
     })
   }

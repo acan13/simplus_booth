@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   get '/update_progress' => 'counters#update_progress'
 
-  get '/donate' => 'counters#donate'
+  get '/donate/:charity' => 'counters#donate'
 
   get '/admin' => 'counters#admin'
   post '/admin/update' => 'counters#admin_update'

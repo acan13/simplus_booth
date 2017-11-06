@@ -11,8 +11,20 @@
       <form class="" action="/admin/update" method="post">
         <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
         <p>
+          <label for="name1">Name: </label>
+          <input type="text" name="name1" value="<%= @org1.name %>">
+        </p>
+        <p>
           <label for="count">Current donation total $</label>
-          <input type="text" name="count" value="<%= @count %>">
+          <input type="text" name="count" value="<%= @org1.counter %>">
+        </p>
+        <p>
+          <label for="name2">Name: </label>
+          <input type="text" name="name2" value="<%= @org2.name %>">
+        </p>
+        <p>
+          <label for="count">Current donation total $</label>
+          <input type="text" name="count" value="<%= @org2.counter %>">
         </p>
         <input type="submit" name="" value="Edit">
       </form>
