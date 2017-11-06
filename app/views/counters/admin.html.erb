@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <a href="/">Main page</a>
+    <div id="admin">
+      <h1>Admin page</h1>
+      <form class="" action="/admin/update" method="post">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+        <p>
+          <label for="count">Current donation total $</label>
+          <input type="text" name="count" value="<%= @count %>">
+        </p>
+        <input type="submit" name="" value="Edit">
+      </form>
+    </div>
+  </body>
+</html>
