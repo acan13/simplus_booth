@@ -25,10 +25,10 @@ class CountersController < ApplicationController
   end
 
   def admin
-    if Donation.find(1).nil?
+    if Donation.find_by_id(1).nil?
       Donation.create(name:"Water.org",counter:0)
     end
-    if Donation.find(2).nil?
+    if Donation.find_by_id(2).nil?
       Donation.create(name:"Educated Refugee Foundation",counter:0)
     end
     @org1 = Donation.find(1)
